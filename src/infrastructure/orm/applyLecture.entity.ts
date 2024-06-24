@@ -16,7 +16,7 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
-export class ApplyLecture {
+export class ApplyLectureOrmEntity {
   @PrimaryColumn()
   lectureId: number;
 

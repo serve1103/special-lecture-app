@@ -1,9 +1,12 @@
-import { Lecture } from '../../infrastructure/orm/lecture.entity';
+import { LectureOrmEntity } from '../../infrastructure/orm/lecture.entity';
 
 export interface LectureRepository {
-  getLectureAll(): Promise<Lecture[]>;
-  getLecture(id: number): Promise<Lecture | undefined>;
-  setLecture(lectureData: Partial<Lecture>): Promise<Lecture>;
-  updateLecture(id: number, lectureData: Partial<Lecture>): Promise<void>;
+  getLectureAll(): Promise<LectureOrmEntity[]>;
+  getLecture(id: number): Promise<LectureOrmEntity | undefined>;
+  setLecture(lectureData: Partial<LectureOrmEntity>): Promise<LectureOrmEntity>;
+  updateLecture(
+    id: number,
+    lectureData: Partial<LectureOrmEntity>,
+  ): Promise<void>;
   delLecture(id: number): Promise<void>;
 }

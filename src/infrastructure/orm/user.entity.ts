@@ -16,7 +16,7 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
-export class User {
+export class UserOrmEntity {
   @PrimaryColumn()
   userId: string;
 
