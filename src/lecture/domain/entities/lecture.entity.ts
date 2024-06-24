@@ -18,7 +18,7 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Lecture {
   @PrimaryColumn()
-  lectureId: string;
+  lectureId: number;
 
   @PrimaryColumn()
   lectureName: string;

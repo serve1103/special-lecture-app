@@ -16,15 +16,15 @@
 import { Column, Entity, PrimaryColumn } from 'typeorm';
 
 @Entity()
-export class Lecture {
+export class ApplyLecture {
   @PrimaryColumn()
-  lectureId: string;
+  lectureId: number;
 
   @PrimaryColumn()
   userId: string;
 
   @Column()
-  maxPersonnel: string;
+  maxPersonnel: number;
 
   @Column()
   rowPersonnel: number;
