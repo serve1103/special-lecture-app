@@ -1,9 +1,15 @@
 import { Module } from '@nestjs/common';
 import { LectureController } from './presentation/controllers/lecture.controller';
-import { LectureService } from './application/services/lecture.application-service';
+import { LectureServiceImpl } from './application/services/lecture.serivce';
+import { LectureService } from './application/services/lecture.service.interface';
 
 @Module({
   controllers: [LectureController],
-  providers: [LectureService]
+  providers: [
+    { provide: LectureService, useClass: LectureServiceImpl },
+  ],
+  exports: [
+    LectureService,
+  ]
 })
 export class LectureModule {}
