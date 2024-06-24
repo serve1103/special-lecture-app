@@ -1,7 +1,7 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { LectureController } from './lecture.controller';
+import { LectureController } from '../presentation/controllers/lecture.controller';
 
-describe('LectureController', () => {
+describe('특강 컨트롤러 TC', () => {
   let controller: LectureController;
 
   beforeEach(async () => {
@@ -12,7 +12,11 @@ describe('LectureController', () => {
     controller = module.get<LectureController>(LectureController);
   });
 
-  it('should be defined', () => {
+  it('컨트롤러가 제대로 정의 되었는지?', () => {
     expect(controller).toBeDefined();
+  });
+
+  describe('특강 선택 조회', () => {
+    it('1. 성공', async () => {});
   });
 });
