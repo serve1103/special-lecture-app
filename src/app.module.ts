@@ -1,6 +1,6 @@
 import { Module } from '@nestjs/common';
-import { LectureModule } from './lecture/lecture.module';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { LectureModule } from './lecture.module';
 
 @Module({
   imports: [
