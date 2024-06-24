@@ -27,7 +27,8 @@
     "mssql": "^10.0.4",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.8.1",
-    "tedious": "^18.2.1"
+    "tedious": "^18.2.1",
+    "typeorm": "^0.3.20"
   },
   "devDependencies": {
     "@nestjs/cli": "^10.0.0",
