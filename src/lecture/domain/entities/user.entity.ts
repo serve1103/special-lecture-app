@@ -18,14 +18,8 @@ import { Column, Entity, PrimaryColumn } from 'typeorm';
 @Entity()
 export class Lecture {
   @PrimaryColumn()
-  lectureId: string;
-
-  @PrimaryColumn()
-  lectureName: string;
+  userId: string;
 
   @Column()
-  startDate: string;
-
-  @Column()
-  personnel: number;
+  userName: string;
 }

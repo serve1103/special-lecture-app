@@ -21,11 +21,11 @@ export class Lecture {
   lectureId: string;
 
   @PrimaryColumn()
-  lectureName: string;
+  userId: string;
 
   @Column()
-  startDate: string;
+  maxPersonnel: string;
 
   @Column()
-  personnel: number;
+  rowPersonnel: number;
 }
