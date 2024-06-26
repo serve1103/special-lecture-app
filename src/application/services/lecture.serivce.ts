@@ -1,14 +1,17 @@
-import { Injectable } from '@nestjs/common';
+import { Inject, Injectable } from '@nestjs/common';
 import { LectureSerivce } from '../../domain/interface/lecture.service.interface';
 import { LectureRepositoryImpl } from '../../infrastructure/repositories/lecture.repository.impl';
-import { LectureApplyDto } from '../dtos/lectureApply.dto';
-import { LectureApplyRepositoryImpl } from 'src/infrastructure/repositories/lectureApply.repository.impl';
-import { LectureApply } from 'src/domain/entities/lectureApply.entity';
+import { LectureApplyRepositoryImpl } from '../../infrastructure/repositories/lectureApply.repository.impl';
+import { LectureApply } from '../../domain/entities/lectureApply.entity';
+import { Lecture } from '../../domain/entities/lecture.entity';
+
 
 @Injectable()
 export class LectureServiceImpl implements LectureSerivce {
   constructor(
+    @Inject('LectureRepository')
     private readonly lectureRepository: LectureRepositoryImpl,
+    @Inject('LectureApplyRepository')
     private readonly lectureApplyRepository: LectureApplyRepositoryImpl,
   ) {}
 
@@ -34,18 +37,19 @@ export class LectureServiceImpl implements LectureSerivce {
 
   // 특강 목록
   async getLectureList(): Promise<Lecture[]> {
-    return;
+    return await this.lectureRepository.getLectureAll();
   }
 
   // 특강 신청 완료 여부
   async getLectureComplete(
-    lectureId: number,
-    userId: number,
+    id: string
   ): Promise<boolean> {
-    const lecture = await this.lectureRepository.getLecture(lectureId);
+    const lecture = await this.lectureApplyRepository.getLectureApply(id);
     if (!lecture) {
-      throw new Error('특강을 찾을 수 없습니다.');
+      return false;
     }
-    return lecture.appliedUsers?.includes(userId) || false;
+    else {
+      return true;
+    }
   }
 }

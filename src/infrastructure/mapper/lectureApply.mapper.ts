@@ -4,7 +4,6 @@ import { ApplyLectureOrmEntity } from '../orm/applyLecture.entity';
 export class LectureApplyMapper {
   static toDomain(entity: ApplyLectureOrmEntity): LectureApply {
     return new LectureApply(
-      entity.applylectureId,
       entity.lectureId,
       entity.userId,
     );
@@ -12,9 +11,9 @@ export class LectureApplyMapper {
 
   static toEntity(domain: LectureApply): ApplyLectureOrmEntity {
     return {
-      applylectureId: domain.id,
       lectureId: domain.lectureId,
       userId: domain.userId,
+      applylectureId: domain.applyLecture,
     };
   }
 }
