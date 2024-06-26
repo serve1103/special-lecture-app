@@ -13,19 +13,16 @@
  *
  *
  */
-import { Column, Entity, PrimaryColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 
 @Entity()
 export class ApplyLectureOrmEntity {
-  @PrimaryColumn()
+  @PrimaryGeneratedColumn()
+  applylectureId: number;
+
+  @Column()
   lectureId: number;
 
-  @PrimaryColumn()
+  @Column()
   userId: string;
-
-  @Column()
-  maxPersonnel: number;
-
-  @Column()
-  rowPersonnel: number;
 }
