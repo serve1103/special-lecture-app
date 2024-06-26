@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { LectureService } from '../interfaces/lecture.service.interface';
+import { LectureSerivce } from '../../domain/interface/lecture.service.interface';
 
 @Injectable()
-export class LectureServiceImpl implements LectureService {}
+export class LectureServiceImpl implements LectureSerivce {}
