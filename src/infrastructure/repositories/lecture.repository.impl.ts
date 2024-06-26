@@ -38,13 +38,11 @@ export class LectureRepositoryImpl implements LectureRepository {
     return LectureMapper.toDomain(savedOrmEntity);
   }
 
-  // 특강 수정
-  async updateLecture(
-    id: number,
-    lectureData: Partial<LectureOrmEntity>,
-  ): Promise<void> {
-    return this.lectureRepository.update(id, lectureData).then(() => {});
-  }
+  // // 특강 수정
+  // async updateLecture(
+  //   id: number,
+  //   lectureData: LectureOrmEntity,
+  // ): Promise<void> {}
 
   // 특강 삭제
   async delLecture(id: number): Promise<void> {
