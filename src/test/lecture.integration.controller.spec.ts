@@ -8,6 +8,7 @@ import { LectureApplyRepositoryImpl } from '../infrastructure/repositories/lectu
 import { LectureController } from '../presentation/controllers/lecture.controller';
 import { LectureApplyDto } from '../application/dtos/lectureApply.dto';
 import { Repository } from 'typeorm';
+import { CreateLectureApplyDto } from 'src/application/dtos/createLecture.dto';
 
 describe('특강 컨트롤러 integration TC', () => {
   let controller: LectureController;
@@ -69,7 +70,7 @@ describe('특강 컨트롤러 integration TC', () => {
   describe('특강 신청 서비스', () => {
     // 정원 초과
     it('정원 초과', async () => {
-      const lecture = new LectureOrmEntity();
+      const lecture = new s();
       lecture.lectureName = '테스트 강의입니다';
       lecture.startDate = '2024-06-27';
       lecture.personnel = 1;
