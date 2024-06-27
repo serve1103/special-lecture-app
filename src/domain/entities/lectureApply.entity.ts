@@ -5,6 +5,6 @@ export class LectureApply {
     // 유저 ID
     public userId: string,
     // ID
-    public applyLecture?:number,
+    public applyLecture?: number,
   ) {}
 }

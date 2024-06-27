@@ -5,7 +5,6 @@ import { LectureApplyRepositoryImpl } from '../../infrastructure/repositories/le
 import { LectureApply } from '../../domain/entities/lectureApply.entity';
 import { Lecture } from '../../domain/entities/lecture.entity';
 
-
 @Injectable()
 export class LectureServiceImpl implements LectureSerivce {
   constructor(
@@ -41,14 +40,11 @@ export class LectureServiceImpl implements LectureSerivce {
   }
 
   // 특강 신청 완료 여부
-  async getLectureComplete(
-    id: string
-  ): Promise<boolean> {
+  async getLectureComplete(id: string): Promise<boolean> {
     const lecture = await this.lectureApplyRepository.getLectureApply(id);
     if (!lecture) {
       return false;
-    }
-    else {
+    } else {
       return true;
     }
   }

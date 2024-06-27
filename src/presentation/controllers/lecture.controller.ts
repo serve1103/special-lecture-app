@@ -1,14 +1,13 @@
 import { Controller, Get, Inject, Post } from '@nestjs/common';
 import { LectureServiceImpl } from '../../application/services/lecture.serivce';
 import { LectureApplyDto } from 'src/application/dtos/lectureApply.dto';
-import { LectureApply } from 'src/domain/entities/lectureApply.entity';
 
 @Controller('lecture')
 export class LectureController {
   constructor(
     @Inject('LectureService')
-    private readonly lectureService: LectureServiceImpl
-  ) { }
+    private readonly lectureService: LectureServiceImpl,
+  ) {}
 
   // 특강 신청 API
   @Post('/apply')
@@ -24,7 +23,7 @@ export class LectureController {
 
   // 특강 신청 완료 여부 조회 API
   @Get('application/:id')
-  async getLectureComplet(id:string) {
+  async getLectureComplet(id: string) {
     return await this.lectureService.getLectureComplete(id);
   }
 }
