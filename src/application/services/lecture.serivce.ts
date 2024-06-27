@@ -31,6 +31,13 @@ export class LectureServiceImpl implements LectureSerivce {
       throw new Error('이미 등록된 특강입니다.');
     }
 
+    // 해당 특강의 현재 신청자 수 확인
+    const applyCount =
+      await this.lectureApplyRepository.getLectureApplyCount(lectureId);
+    if (applyCount >= lecture.capacity) {
+      throw new Error('정원이 초과되었습니다.');
+    }
+
     await this.lectureApplyRepository.setLectureApply(lectureApply);
   }
 

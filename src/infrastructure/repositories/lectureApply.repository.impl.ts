@@ -28,4 +28,10 @@ export class LectureApplyRepositoryImpl implements LectureApplyRepository {
     const createdEntity = await this.lectureApplyRepository.save(ormEntity);
     return LectureApplyMapper.toDomain(createdEntity);
   }
+
+  async getLectureApplyCount(lectureId: number): Promise<number> {
+    return await this.lectureApplyRepository.count({
+      where: { lectureId },
+    });
+  }
 }

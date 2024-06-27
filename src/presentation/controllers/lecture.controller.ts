@@ -1,6 +1,6 @@
 import { Controller, Get, Inject, Post } from '@nestjs/common';
 import { LectureServiceImpl } from '../../application/services/lecture.serivce';
-import { LectureApplyDto } from 'src/application/dtos/lectureApply.dto';
+import { LectureApplyDto } from '../../application/dtos/lectureApply.dto';
 
 @Controller('lecture')
 export class LectureController {
