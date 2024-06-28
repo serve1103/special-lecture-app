@@ -70,7 +70,7 @@ describe('특강 컨트롤러 integration TC', () => {
   describe('특강 신청 서비스', () => {
     // 정원 초과
     it('정원 초과', async () => {
-      const lecture = new s();
+      const lecture = new LectureOrmEntity();
       lecture.lectureName = '테스트 강의입니다';
       lecture.startDate = '2024-06-27';
       lecture.personnel = 1;
