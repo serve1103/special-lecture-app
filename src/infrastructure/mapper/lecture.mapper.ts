@@ -17,6 +17,7 @@ export class LectureMapper {
       lectureName: domain.title ?? '',
       startDate: domain.openDate ?? '',
       personnel: domain.capacity ?? 0,
+      version: domain.version, // version 필드를 추가합니다.
     };
   }
 }

@@ -13,7 +13,7 @@
  *
  *
  */
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, PrimaryGeneratedColumn, VersionColumn } from 'typeorm';
 
 @Entity()
 export class LectureOrmEntity {
@@ -28,4 +28,7 @@ export class LectureOrmEntity {
 
   @Column()
   personnel: number;
+
+  @VersionColumn()
+  version: number;
 }
